@@ -1,5 +1,18 @@
 $(document).ready(function () {
 
+  let video = $('.probe-video__video')[0];
+  video.pause();
+  var $element = $('.probe-video__video');
+  let counter = 0;
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop() + $(window).height();
+    var offset = $element.offset().top
+    if (scroll > offset && counter == 0) {
+      video.play();
+    }
+  });
+
+
 
   let counter_wheel = 0;
   let counter_btn = 0;
